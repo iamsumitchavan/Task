@@ -1,0 +1,7 @@
+@import url("./style.css");
+
+.app {
+  background-color: var(--background-color);
+  padding: 16px;
+  height: 100vh;
+}

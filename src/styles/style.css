@@ -1,0 +1,11 @@
+:root {
+  --background-color: #e6e7f2;
+  --text-color: #333333;
+  --create-btn-color: #eba51c;
+  --show-btn-color: #80669d;
+}
+
+h3 {
+  font-size: 38px;
+  font-weight: 300;
+}

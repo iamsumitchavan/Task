@@ -1,24 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Dashboard from "./components/dashboard";
+import SlidePage from "./components/slidePage";
+import "./styles/App.css";
+import { TableDataContext } from "./contextapi/dataContext";
+import { PageTranslateContext } from "./contextapi/dataContext";
+import { dummydata } from "./common/dummyData/dummyData";
 
 function App() {
+  const [isTransitionActive, setIsTransitionActive] = useState(false);
+  const [isModal, setIsmodal] = useState(false);
+  const [tableData, setTableData] = useState(dummydata);
+
+  const handleTransition = () => {
+    setIsTransitionActive(!isTransitionActive);
+  };
+
+  const handleClose = () => {
+    setIsmodal(false);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <TableDataContext.Provider
+        value={{
+          tableData,
+          setTableData,
+          setIsmodal,
+          isModal,
+          handleClose,
+        }}
+      >
+        <PageTranslateContext.Provider
+          value={{
+            handleTransition,
+            isTransitionActive,
+            setIsTransitionActive,
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <SlidePage>
+            <div
+              onClick={() => {
+                if (isTransitionActive) {
+                  setIsTransitionActive(false);
+                }
+              }}
+              className="app"
+            >
+              <Dashboard />
+            </div>
+          </SlidePage>
+        </PageTranslateContext.Provider>
+      </TableDataContext.Provider>
+    </>
   );
 }
 

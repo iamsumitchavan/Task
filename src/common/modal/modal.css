@@ -1,0 +1,87 @@
+/* Container for the form */
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form group (each field) */
+.form-group {
+  margin-bottom: 0.5rem;
+}
+
+/* Input fields and select dropdown */
+.input {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Textarea field */
+.textarea {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+/* Submit button */
+.submit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.success-popup {
+  position: absolute;
+  top: 4rem;
+  right: 7rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 8rem;
+  padding: 16px;
+}
+
+.success-text {
+  color: #008000;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.success-img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.remove-success {
+  width: 34px;
+  height: 34px;
+  font-weight: 800;
+  color: #008000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
