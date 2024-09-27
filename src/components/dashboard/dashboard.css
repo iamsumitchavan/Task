@@ -46,6 +46,7 @@
 }
 .create-logo {
   font-size: 28px;
+  margin-right: 0.2rem;
 }
 .button-wrapper {
   display: flex;

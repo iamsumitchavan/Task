@@ -7,17 +7,20 @@ import { MdCreateNewFolder } from "react-icons/md";
 import { BiShow } from "react-icons/bi";
 import { PageTranslateContext } from "../../contextapi/dataContext";
 import { FaArrowRightLong } from "react-icons/fa6";
+import CommonButton from "../../common/button";
+import { MdOutlineAddTask } from "react-icons/md";
 
 const Dashboard = ({ setIsmodal }) => {
   const { handleTransition } = useContext(PageTranslateContext);
   return (
     <div className="dash-container">
       <img className="task-img" src={task} alt="" />
+
       <div className="form-container">
         <h3>Create Your Task here...!</h3>
         <ModalPage />
         <div className="button-wrapper">
-          <button className="create-task-btn" onClick={() => setIsmodal(true)}>
+          {/* <button className="create-task-btn" onClick={() => setIsmodal(true)}>
             <MdCreateNewFolder className="create-logo" />
             <h5 className="create-task">create task</h5>
           </button>
@@ -28,7 +31,18 @@ const Dashboard = ({ setIsmodal }) => {
             <BiShow className="create-logo" />
             <h5 className="create-task">Task List</h5>
             <FaArrowRightLong className="create-logo" />
-          </button>
+          </button> */}
+
+          <CommonButton
+            onclick={() => setIsmodal(true)}
+            title="Create task"
+            name="task"
+          />
+          <CommonButton
+            onclick={handleTransition}
+            title="watch list"
+            name="list"
+          />
         </div>
       </div>
     </div>
